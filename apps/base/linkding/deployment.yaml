@@ -20,8 +20,8 @@ spec:
         runAsGroup: 33
 
       containers:
-      - image: linkding
-        name: sissbruecker/linkding:1.31.0
+      - image: sissbruecker/linkding:1.31.0
+        name: linkding
         ports:
         - containerPort: 9090
 
@@ -33,5 +33,5 @@ spec:
           mountPath: /etc/linkding/data
       volumes:
         - name: linkding-data
-          PersistentVolumeClaim:
+          persistentVolumeClaim:
             claimName: linkding-data-pvc
